@@ -1,0 +1,30 @@
+# FAST API Backend
+
+# To install this project:
+
+# Create a python virtual environment
+
+python -m venv env
+
+# Activate python virtual environment (Windows)
+
+./env/Scripts/Activate.ps1
+
+# To run this project:
+
+uvicorn main:app --reload
+
+# Descriptions of components
+
+main.py
+app.get("/") is used as an endpoint to verify functionality between front end and back end and returns the standard Hello World
+@app.get("/get_daily_test_data") is used as an endpoint to read the csv data and return the data as a json response
+
+read_csv.py
+def read_csv(): is a function call to open the csv file and convert the data into a list[dict{}]
+def read_csv_locally(): is a function call to open the csv file and convert the data into a list[dict{}]. This program is only intended to be run locally to verify correct reading and output of csv file.
+
+# Improvements
+
+Enable the use of CSRF tokens in a deployed environment.
+Move function call of app.get("/get_daily_test_data") into it's own python file to handle better segregation of code.
